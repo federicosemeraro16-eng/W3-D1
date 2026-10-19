@@ -275,6 +275,19 @@ console.log("----------------------------------------");
 // const utentiAlf = utenti.sort((a,b) => a.nome.localeCompare(b.nome))
 // console.log(`Utenti in ordine alfabetico: `,utentiAlf)
 
+const utentiAlf = utenti.sort((a, b) => {
+  if (a > b) {
+    return 1;
+  }
+
+  if (a < b) {
+    return -1;
+  }
+  return 0;
+});
+
+console.log(`utenti in ordine alfabetico:`, utentiAlf);
+
 // LASCIO IL SECONDO ESERCIZIO COMMENTATO DATO CHE ALTRIMENTI RI MODIFICA L'ARRAY E MOSTRA SOLO UNA DELLE DUE OPZIONI//
 
 /* ESERCIZIO 15 — Chaining
@@ -291,7 +304,7 @@ const chainMeth = utenti
   .filter(({ attivo }) => attivo === true)
   .map(({ nome, cognome }) => {
     return `${nome} ${cognome}`;
-  }).sort((a,b) => a.localeCompare(b));
+  })
+  .sort((a, b) => a.localeCompare(b));
 
-
-	console.log(chainMeth)
+console.log(chainMeth);
