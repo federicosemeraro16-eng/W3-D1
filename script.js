@@ -208,6 +208,8 @@ const utentiPlus = utenti.map((utenti) => {
 });
 
 console.log(utentiPlus);
+
+console.log("----------------------------------------");
 /* ESERCIZIO 10 — filter attivi
    Usa filter per ottenere solo gli utenti con attivo: true.
    Stampa l'array risultante.
@@ -215,12 +217,25 @@ console.log(utentiPlus);
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
+const utentiFiltered = utenti.filter(({ attivo }) => attivo === true);
+
+// console.log('Utenti non filtrati:',utenti)
+console.log("Utenti filtrati:", utentiFiltered);
+
+console.log("----------------------------------------");
+
 /* ESERCIZIO 11 — filter combinato
    Usa filter per ottenere solo gli utenti maggiorenni (eta >= 18) che vivono a Milano.
    Stampa l'array risultante.
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+
+const filterCombined = utenti.filter(
+  ({ eta, città }) => eta >= 18 && città === "Milano",
+);
+
+console.log(filterCombined);
 
 /* ESERCIZIO 12 — find
    Usa find per trovare il primo utente con id === 4.
