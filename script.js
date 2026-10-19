@@ -65,10 +65,7 @@ const utenti = [
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
-const quadrato = (n) => {
-  return n * n;
-};
-
+const quadrato = (n) => n * n;
 console.log(quadrato(5));
 
 console.log("----------------------------------------");
@@ -170,7 +167,7 @@ console.log("----------------------------------------");
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 utenti.forEach((utenti) => {
-  return console.log(
+  console.log(
     `Nome: ${utenti.nome} Cognome:${utenti.cognome} (${utenti.eta})}`,
   );
 });
@@ -199,13 +196,10 @@ console.log("----------------------------------------");
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
-const utentiPlus = utenti.map((utenti) => {
-  const utentePlus = {
-    ...utenti,
-    descrizione: `${utenti.nome} ${utenti.cognome},${utenti.città}`,
-  };
-  return utentePlus;
-});
+const utentiPlus = utenti.map((utenti) => ({
+  ...utenti,
+  descrizione: `${utenti.nome} ${utenti.cognome},${utenti.città}`,
+}));
 
 console.log(utentiPlus);
 
@@ -259,6 +253,10 @@ let averageAge = ageSum / utenti.length;
 
 console.log(averageAge.toFixed(2));
 
+const activeUsers = utenti.reduce((a,{attivo}) => a + attivo,0)
+
+console.log(`Utenti attivi :`,activeUsers)
+
 console.log("----------------------------------------");
 
 /* ESERCIZIO 14 — sort
@@ -272,21 +270,25 @@ const etaCresc = utenti.sort((a, b) => a.eta - b.eta);
 console.log(`Utenti in ordine di età crescente`, etaCresc);
 
 console.log("----------------------------------------");
-// const utentiAlf = utenti.sort((a,b) => a.nome.localeCompare(b.nome))
+
+
+
+// const utentiAlf = utenti.sort((a,b) => a.nome.localeCompare(b.nome))- 
+// non si usa perché compara in base alla lingua del server può avere questo problema 
 // console.log(`Utenti in ordine alfabetico: `,utentiAlf)
 
-const utentiAlf = utenti.sort((a, b) => {
-  if (a > b) {
-    return 1;
-  }
+// const utentiAlf = utenti.sort((a, b) => {
+//   if (a > b) {
+//     return true;
+//   }
 
-  if (a < b) {
-    return -1;
-  }
-  return 0;
-});
+//   if (a < b) {
+//     return false;
+//   }
+  
+// });
 
-console.log(`utenti in ordine alfabetico:`, utentiAlf);
+// console.log(`utenti in ordine alfabetico:`, utentiAlf);
 
 // LASCIO IL SECONDO ESERCIZIO COMMENTATO DATO CHE ALTRIMENTI RI MODIFICA L'ARRAY E MOSTRA SOLO UNA DELLE DUE OPZIONI//
 
