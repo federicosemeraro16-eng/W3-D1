@@ -268,12 +268,14 @@ console.log("----------------------------------------");
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
-const etaCresc = utenti.sort((a,b)=>a.eta - b.eta)
-console.log(`Utenti in ordine di età crescente`,etaCresc)
+const etaCresc = utenti.sort((a, b) => a.eta - b.eta);
+console.log(`Utenti in ordine di età crescente`, etaCresc);
+
+console.log("----------------------------------------");
 // const utentiAlf = utenti.sort((a,b) => a.nome.localeCompare(b.nome))
 // console.log(`Utenti in ordine alfabetico: `,utentiAlf)
 
-// LASCIO IL SECONDO ESERCIZIO COMMENTATO DATO CHE ALTRIMENTI RI MODIFICA L'ARRAY // 
+// LASCIO IL SECONDO ESERCIZIO COMMENTATO DATO CHE ALTRIMENTI RI MODIFICA L'ARRAY E MOSTRA SOLO UNA DELLE DUE OPZIONI//
 
 /* ESERCIZIO 15 — Chaining
    Componi una catena di metodi che:
@@ -284,3 +286,12 @@ console.log(`Utenti in ordine di età crescente`,etaCresc)
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+
+const chainMeth = utenti
+  .filter(({ attivo }) => attivo === true)
+  .map(({ nome, cognome }) => {
+    return `${nome} ${cognome}`;
+  }).sort((a,b) => a.localeCompare(b));
+
+
+	console.log(chainMeth)
