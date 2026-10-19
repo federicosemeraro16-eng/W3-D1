@@ -7,54 +7,54 @@
 */
 
 const utenti = [
-	{
-		id: 1,
-		nome: 'Antonio',
-		cognome: 'Rossi',
-		eta: 28,
-		attivo: true,
-		città: 'Milano',
-	},
-	{
-		id: 2,
-		nome: 'Anna',
-		cognome: 'Bianchi',
-		eta: 35,
-		attivo: false,
-		città: 'Roma',
-	},
-	{
-		id: 3,
-		nome: 'Luca',
-		cognome: 'Verdi',
-		eta: 17,
-		attivo: true,
-		città: 'Milano',
-	},
-	{
-		id: 4,
-		nome: 'Sara',
-		cognome: 'Neri',
-		eta: 17,
-		attivo: true,
-		città: 'Torino',
-	},
-	{
-		id: 5,
-		nome: 'Marco',
-		cognome: 'Gialli',
-		eta: 45,
-		attivo: false,
-		città: 'Roma',
-	},
-	{
-		id: 6,
-		nome: 'Chiara',
-		cognome: 'Rosa',
-		eta: 30,
-		attivo: true,
-		città: 'Milano',
-	},
+  {
+    id: 1,
+    nome: "Antonio",
+    cognome: "Rossi",
+    eta: 28,
+    attivo: true,
+    città: "Milano",
+  },
+  {
+    id: 2,
+    nome: "Anna",
+    cognome: "Bianchi",
+    eta: 35,
+    attivo: false,
+    città: "Roma",
+  },
+  {
+    id: 3,
+    nome: "Luca",
+    cognome: "Verdi",
+    eta: 17,
+    attivo: true,
+    città: "Milano",
+  },
+  {
+    id: 4,
+    nome: "Sara",
+    cognome: "Neri",
+    eta: 17,
+    attivo: true,
+    città: "Torino",
+  },
+  {
+    id: 5,
+    nome: "Marco",
+    cognome: "Gialli",
+    eta: 45,
+    attivo: false,
+    città: "Roma",
+  },
+  {
+    id: 6,
+    nome: "Chiara",
+    cognome: "Rosa",
+    eta: 30,
+    attivo: true,
+    città: "Milano",
+  },
 ];
 
 /* ESERCIZIO 1 — Arrow function compatta
@@ -65,6 +65,13 @@ const utenti = [
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
+const quadrato = (n) => {
+  return n * n;
+};
+
+console.log(quadrato(5));
+
+console.log("----------------------------------------");
 /* ESERCIZIO 2 — Destructuring di oggetto
    Crea un oggetto "persona" con almeno 4 properties (es. nome, cognome, eta, città).
    Estrai 3 properties in 3 variabili usando destructuring.
@@ -72,6 +79,21 @@ const utenti = [
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+
+const persona = {
+  userName: "Federico",
+  surName: "Semeraro",
+  eta: 34,
+  citta: "Massafra",
+};
+
+const { userName, surName, eta, citta } = persona;
+
+console.log(userName);
+console.log(eta);
+console.log(citta);
+
+console.log("----------------------------------------");
 
 /* ESERCIZIO 3 — Destructuring nei parametri
    Scrivi una arrow function "riepilogo" che riceve un utente e ritorna
@@ -81,6 +103,15 @@ const utenti = [
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
+const riepilogo = ({ nome, cognome, eta }) => {
+  return console.log(`${nome} ${cognome} (${eta})`);
+};
+
+riepilogo(utenti[0]);
+riepilogo(utenti[1]);
+
+console.log("----------------------------------------");
+
 /* ESERCIZIO 4 — Spread su array
    Crea numeri = [1, 2, 3].
    Crea una copia indipendente con spread, fai push(99) sulla copia.
@@ -89,6 +120,14 @@ const utenti = [
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
+const numb = [1, 2, 3];
+const numb2 = [...numb];
+numb2.push(99);
+console.log(numb);
+console.log(numb2);
+
+console.log("----------------------------------------");
+
 /* ESERCIZIO 5 — Spread per concatenare
    frutti  = ["mela", "banana"]
    verdure = ["carota", "spinaci"]
@@ -96,6 +135,15 @@ const utenti = [
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+
+const frutti = ["mela", "banana"];
+const verdure =['carota','spinaci']
+
+const cibo = [...frutti,...verdure]
+
+console.log(cibo)
+
+console.log("----------------------------------------");
 
 /* ESERCIZIO 6 — Spread su oggetto
    prodotto = { nome: "Cuffie", prezzo: 79.99 }
