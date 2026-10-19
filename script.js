@@ -137,11 +137,11 @@ console.log("----------------------------------------");
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 const frutti = ["mela", "banana"];
-const verdure =['carota','spinaci']
+const verdure = ["carota", "spinaci"];
 
-const cibo = [...frutti,...verdure]
+const cibo = [...frutti, ...verdure];
 
-console.log(cibo)
+console.log(cibo);
 
 console.log("----------------------------------------");
 
@@ -149,7 +149,16 @@ console.log("----------------------------------------");
    prodotto = { nome: "Cuffie", prezzo: 79.99 }
    Crea un nuovo oggetto con "disponibile: true" aggiunto, senza modificare prodotto.
    Stampa il nuovo oggetto.
+
 */
+
+const prodotto = { nome: "Cuffie", prezzo: 79.99 };
+const newProd = { ...prodotto, disponibile: true };
+
+console.log(prodotto);
+console.log(newProd);
+
+console.log("----------------------------------------");
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
@@ -160,12 +169,25 @@ console.log("----------------------------------------");
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
+utenti.forEach((utenti) => {
+  return console.log(
+    `Nome: ${utenti.nome} Cognome:${utenti.cognome} (${utenti.eta})}`,
+  );
+});
+
+console.log("----------------------------------------");
+
 /* ESERCIZIO 8 — map a stringhe
    Usa map per creare nomiCompleti = ["Mario Rossi", "Anna Bianchi", ...].
    Stampa l'array.
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+
+const nomiCompleti = utenti.map((utenti) => utenti.nome);
+console.log(nomiCompleti);
+
+console.log("----------------------------------------");
 
 /* ESERCIZIO 9 — map a oggetti
    Usa map per creare utentiPlus: array di oggetti dove ogni utente ha tutte
@@ -177,6 +199,15 @@ console.log("----------------------------------------");
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
+const utentiPlus = utenti.map((utenti) => {
+  const utentePlus = {
+    ...utenti,
+    descrizione: `${utenti.nome} ${utenti.cognome},${utenti.città}`,
+  };
+  return utentePlus;
+});
+
+console.log(utentiPlus);
 /* ESERCIZIO 10 — filter attivi
    Usa filter per ottenere solo gli utenti con attivo: true.
    Stampa l'array risultante.
