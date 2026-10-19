@@ -244,6 +244,9 @@ console.log(filterCombined);
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
+const idFour = utenti.find(({ id }) => id === 4);
+console.log(idFour);
+
 /* ESERCIZIO 13 — reduce
    a) Usa reduce per calcolare l'età media (somma età / numero utenti). Stampa.
    b) Usa reduce per contare il numero di utenti attivi. Stampa.
@@ -251,12 +254,26 @@ console.log(filterCombined);
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
+const ageSum = utenti.reduce((a, { eta }) => a + eta, 0);
+let averageAge = ageSum / utenti.length;
+
+console.log(averageAge.toFixed(2));
+
+console.log("----------------------------------------");
+
 /* ESERCIZIO 14 — sort
    a) Ordina gli utenti per eta crescente. Stampa l'array di nomi nell'ordine.
    b) Ordina gli utenti per nome alfabeticamente. Stampa l'array di nomi nell'ordine.
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+
+const etaCresc = utenti.sort((a,b)=>a.eta - b.eta)
+console.log(`Utenti in ordine di età crescente`,etaCresc)
+// const utentiAlf = utenti.sort((a,b) => a.nome.localeCompare(b.nome))
+// console.log(`Utenti in ordine alfabetico: `,utentiAlf)
+
+// LASCIO IL SECONDO ESERCIZIO COMMENTATO DATO CHE ALTRIMENTI RI MODIFICA L'ARRAY // 
 
 /* ESERCIZIO 15 — Chaining
    Componi una catena di metodi che:
